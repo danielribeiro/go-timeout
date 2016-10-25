@@ -35,6 +35,7 @@ func main() {
 
 	if err != nil {
 		if ctx.Err() != nil {
+			fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 			os.Exit(124)
 		} else {
 			exitErr, ok := err.(*exec.ExitError)
